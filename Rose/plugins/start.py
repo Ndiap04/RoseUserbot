@@ -39,7 +39,7 @@ async def pm_text(bot, message):
         parse_mode=ParseMode.HTML,
     )
 
-@bot.on_message(filters.user(owner_id) & filters.text & filters.private)
+@bot.on_message(filters.user(log_grub) & filters.text & filters.private)
 async def reply_text(bot, message):
     reference_id = True
     if message.reply_to_message is not None:
