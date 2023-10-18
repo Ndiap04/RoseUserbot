@@ -16,7 +16,7 @@ db = Database(MONGO_DATABASE, MONGO_NAME)
 
 IF_TEXT = "<b>📨MEMBER MENGIRIM PESAN</b>\n<b>• From:</b> {}\n<b>• Name:</b> {}\n\n{}\n\n• @CuhatBarengBottyBot"
 IF_CONTENT = "<b>Message from:</b> {} \n<b>Name:</b> {}"
-
+LOG_TEXT = "ID: <code>{}</code>\nFirst Name: <a href='tg://user?id={}'>{}{}</a>\nDC ID: <code>{}</code>"
 
 @bot.on_message(filters.command('start') & (filters.private | filters.group))
 async def start(bot, message):
@@ -27,7 +27,7 @@ async def start(bot, message):
         BOT_USERNAME = data.username
         await db.add_user(chat_id)
         await bot.send_message(
-            LOG_CHANNEL,
+            LOG_GROUP_ID,
             f"#NEWUSER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @{BOT_USERNAME} !!",
         )
         return
@@ -47,7 +47,7 @@ async def start(bot, message):
         parse_mode="html"
     )
     await message.reply_text(
-        text="**Hi {}!**\n".format(message.chat.first_name)+C.START,
+        text="**Hi {}!**\n".format(message.chat.first_name)+START,
         reply_markup=InlineKeyboardMarkup([
             [ InlineKeyboardButton(text="🛠SUPPORT🛠", url=f"{C.SUPPORT_GROUP}"), InlineKeyboardButton(text="📮UPDATES📮", url=f"{C.UPDATE_CHANNEL}")]
         ])
