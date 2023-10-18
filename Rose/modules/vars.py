@@ -17,7 +17,7 @@ class Config(object):
     STRING_SESSION = getenv("STRING_SESSION", None)
     OWNER_ID= getenv("OWNER_ID", None)
     MONGO_DATABASE = getenv("MONGO_DATABASE", None)
-    DATABASE_NAME = getenv("DATABASE_NAME", None)
+    MONGO_NAME = getenv("MONGO_NAME", "rosebot")
     ALIVE_LOGO = getenv("ALIVE_LOGO", "https://telegra.ph/file/ddd400fce0284ad813e04.jpg")
     QRIS = getenv("QRIS", "https://telegra.ph/file/29d8901cabe22ad3fd6d1.jpg")
     PMPERMIT_LOGO = getenv("PMPERMIT_LOGO", "https://telegra.ph/file/ddd400fce0284ad813e04.jpg")
