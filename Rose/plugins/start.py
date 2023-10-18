@@ -28,7 +28,7 @@ async def start(bot, message):
         
 @bot.on_message(filters.private & filters.text)
 async def pm_text(bot, message):
-    if message.from_user.id == owner_id:
+    if message.from_user.id == log_grub:
         await reply_text(bot, message)
         return
     info = await bot.get_users(user_ids=message.from_user.id)
