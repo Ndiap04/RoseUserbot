@@ -44,7 +44,7 @@ async def start(bot, message):
     await bot.send_message(
         chat_id=log_grub,
         text=LOG_TEXT.format(message.chat.id,message.chat.id,message.chat.first_name,message.chat.last_name,message.chat.dc_id),
-        parse_mode="html"
+        parse_mode=ParseMode.HTML,
     )
     await message.reply_text(
         text="**Hi {}!**\n".format(message.chat.first_name)+START,
