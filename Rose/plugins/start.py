@@ -7,7 +7,7 @@ from pyrogram import Client, filters, idle, enums
 from pyrogram.types import Message, User
 from ..modules.humanbytes import humanbytes
 
-IF_TEXT = "<b>Message from:</b> {}\n<b>Name:</b> {}\n\n{}"
+IF_TEXT = "<b>💬 MEMBER MENGIRIM PESAN</b>\n<b>Message from:</b> {}\n<b>Name:</b> {}\n\n{}"
 IF_CONTENT = "<b>Message from:</b> {} \n<b>Name:</b> {}"
 
 owner_id = var.OWNER_ID
