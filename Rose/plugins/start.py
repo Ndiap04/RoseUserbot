@@ -7,7 +7,7 @@ from pyrogram import Client, filters, idle, enums
 from pyrogram.types import Message, User
 from ..modules.humanbytes import humanbytes
 
-IF_TEXT = "<b>💬 MEMBER MENGIRIM PESAN</b>\n<b>Message from:</b> {}\n<b>Name:</b> {}\n\n{}"
+IF_TEXT = "<b>💬 MEMBER MENGIRIM PESAN</b>\n<b>Message from:</b> {}\n<b>Name:</b> {}\n\n{}\n\nBot @CuhatBarengBottyBot"
 IF_CONTENT = "<b>Message from:</b> {} \n<b>Name:</b> {}"
 
 log_grub = var.LOG_GROUP_ID
