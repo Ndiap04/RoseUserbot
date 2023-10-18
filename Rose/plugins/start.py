@@ -6,13 +6,16 @@ from pyrogram.enums import ParseMode
 from pyrogram import Client, filters, idle, enums
 from pyrogram.types import Message, User
 from ..modules.humanbytes import humanbytes
-from ..modules import db
 from ..modules.database import Database
 
-IF_TEXT = "<b>💬 MEMBER MENGIRIM PESAN</b>\n<b>Message from:</b> {}\n<b>Name:</b> {}\n\n{}\n\nBot @CuhatBarengBottyBot"
+db = Database(MONGO_DATABASE, MONGO_NAME) 
+
+IF_TEXT = "<b>📨MEMBER MENGIRIM PESAN</b>\n<b>• From:</b> {}\n<b>• Name:</b> {}\n\n{}\n\n• @CuhatBarengBottyBot"
 IF_CONTENT = "<b>Message from:</b> {} \n<b>Name:</b> {}"
 
 log_grub = var.LOG_GROUP_ID
+MONGO_DATABASE = var.MONGO_DATABASE
+MONGO_NAME = var.MONGO_NAME
 
 @bot.on_message(filters.command('start') & (filters.private | filters.group))
 async def start(bot, message):
